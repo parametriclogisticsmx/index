@@ -1,1 +1,234 @@
-<h1> Hello World desde Github Pages</h1>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Parametric Logistics - La precisión detrás de experiencias memorables</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed": "#3e001f",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed-dim": "#ffb0cb",
+                        "primary-container": "#001b3d",
+                        "inverse-on-surface": "#2d3133",
+                        "secondary": "#ffdb9d",
+                        "inverse-surface": "#e0e3e5",
+                        "surface-container": "#1d2022",
+                        "inverse-primary": "#495f84",
+                        "on-background": "#e0e3e5",
+                        "secondary-container": "#feb700",
+                        "on-tertiary-fixed-variant": "#8d004f",
+                        "on-tertiary-container": "#f62590",
+                        "on-secondary-fixed": "#271900",
+                        "secondary-fixed": "#ffdea8",
+                        "surface-container-low": "#191c1e",
+                        "on-secondary-fixed-variant": "#5e4200",
+                        "surface": "#101415",
+                        "on-surface-variant": "#c4c6cf",
+                        "surface-tint": "#b1c7f2",
+                        "surface-bright": "#363a3b",
+                        "on-error-container": "#ffdad6",
+                        "outline-variant": "#44474e",
+                        "outline": "#8e9099",
+                        "primary": "#b1c7f2",
+                        "surface-container-highest": "#323537",
+                        "primary-fixed": "#d6e3ff",
+                        "on-tertiary": "#640036",
+                        "tertiary-container": "#3e001f",
+                        "surface-container-lowest": "#0b0f10",
+                        "on-error": "#690005",
+                        "surface-variant": "#323537",
+                        "tertiary-fixed": "#ffd9e3",
+                        "secondary-fixed-dim": "#ffba20",
+                        "background": "#101415",
+                        "surface-container-high": "#272a2c",
+                        "on-primary-container": "#6f84ac",
+                        "on-primary": "#193053",
+                        "tertiary": "#ffb0cb",
+                        "on-surface": "#e0e3e5",
+                        "on-secondary": "#412d00",
+                        "surface-dim": "#101415",
+                        "primary-fixed-dim": "#b1c7f2",
+                        "on-primary-fixed-variant": "#31476b",
+                        "error-container": "#93000a",
+                        "on-secondary-container": "#6b4b00",
+                        "on-primary-fixed": "#001b3d"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "container-max": "1280px",
+                        "margin-mobile": "20px"
+                    },
+                    fontFamily: {
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "display-lg-mobile": ["Montserrat"],
+                        "body-md": ["Inter"]
+                    },
+                    fontSize: {
+                        "label-caps": ["12px", { lineHeight: "1", letterSpacing: "0.1em", fontWeight: "700" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "display-lg": ["64px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "display-lg-mobile": ["40px", { lineHeight: "1.2", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }]
+                    },
+                    backgroundImage: {
+                        'parametric-flow': 'linear-gradient(to right, #00f2fe 0%, #4facfe 100%)',
+                        'surface-lift': 'radial-gradient(circle at top, rgba(177, 199, 242, 0.05), transparent 70%)',
+                        'dot-matrix': 'radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px)'
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .dot-bg {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .glow-border:focus-within {
+            box-shadow: 0 0 0 1px #4facfe, 0 0 10px rgba(79, 172, 254, 0.3);
+            border-color: #00f2fe;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-primary">
+<!-- TopNavBar -->
+<nav class="bg-surface/80 dark:bg-surface/80 backdrop-blur-xl fixed top-0 w-full z-50 bg-surface-container/10 border-b border-white/10 shadow-sm">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop max-md:px-margin-mobile py-4">
+<a class="font-headline-md text-headline-md font-bold text-primary tracking-tight" href="#">Parametric Logistics</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary border-b-2 border-primary pb-1 font-label-caps text-label-caps hover:text-primary-container transition-all" href="#servicios">Servicios</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps hover:text-primary-container transition-all" href="#nosotros">Nosotros</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps hover:text-primary-container transition-all" href="#portafolio">Portafolio</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps hover:text-primary-container transition-all" href="#blog">Blog</a>
+</div>
+<button class="hidden md:block bg-[#FFB800] text-black font-label-caps text-label-caps px-6 py-3 rounded-DEFAULT hover:bg-secondary-container transition-colors active:scale-95 duration-200">
+                Request Quote
+            </button>
+<!-- Mobile menu button -->
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-32 pb-24 md:pt-48 md:pb-40 overflow-hidden dot-bg">
+<div class="absolute inset-0 z-0">
+<img alt="Vibrant parametric curves representing scientific logistics flow" class="w-full h-full object-cover opacity-30 mix-blend-screen" data-alt="Abstract vibrant neon parametric curves flowing across a dark navy blue background, representing data flow, precision, and scientific logistics in a modern, high-tech enterprise environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdJS8yOD-mXmHu8_9oWEAWps6D3MUl1uAfCM9Bn4raJDo9EviKROeW9jq1MwCSAAX1nizZl3Uz5s-LF8PldqC8054Ea9ElNUPr8GAfQxi1v3DXu8l516iVlNUWK1-4x0YClF_QzXpGt0nbv1dbLMMvR_knR931uhDBhE0kt7wKMVSBDID966dNqM-YyhtQcMFLhGYQmxLUOMrwadR4nV75abRmtfO3BT6sCnxZy3aUfNGAaFhm2RzN9g"/>
+<div class="absolute inset-0 bg-surface-lift"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop max-md:px-margin-mobile grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-8 flex flex-col items-start justify-center">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6">
+                    La precisión detrás de <br/><span class="text-secondary">experiencias memorables</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl">
+                    Logística científica de eventos. Aplicamos rigor matemático y creatividad estructural para diseñar y ejecutar eventos de alto impacto. Si puede parametrizarse, puede mejorarse.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-[#FFB800] text-black font-label-caps text-label-caps px-8 py-4 rounded-DEFAULT hover:bg-secondary-container transition-transform active:scale-95">
+                        Solicitar cotización
+                    </button>
+<button class="bg-transparent border-[1.5px] border-primary text-primary font-label-caps text-label-caps px-8 py-4 rounded-DEFAULT hover:bg-primary hover:text-on-primary transition-colors active:scale-95">
+                        Ver servicios
+                    </button>
+</div>
+</div>
+</div>
+</header>
+<!-- Nosotros Section -->
+<section class="py-24 bg-surface-container-low border-y border-white/5 relative" id="nosotros">
+<div class="max-w-container-max mx-auto px-margin-desktop max-md:px-margin-mobile">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-6">Filosofía Paramétrica</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                        En Parametric Logistics, no dejamos nada al azar. Transformamos la organización de eventos en una ciencia exacta. 
+                    </p>
+<p class="font-body-md text-body-md text-outline mb-8">
+                        Nuestra metodología se basa en la cuantificación de variables y la optimización de recursos, asegurando que cada aspecto de tu evento esté calculado para el éxito. "Si puede parametrizarse, puede mejorarse."
+                    </p>
+<div class="inline-flex items-center gap-2 text-secondary font-label-caps text-label-caps">
+<span class="material-symbols-outlined">analytics</span> Enfoque Basado en Datos
+                    </div>
+</div>
+<div class="relative h-64 md:h-96 rounded-xl overflow-hidden border border-white/10 bg-surface">
+<!-- Placeholder for generic tech image -->
+<div class="bg-cover bg-center w-full h-full opacity-60" data-alt="A macro shot of a glowing blue data grid overlaying a modern architectural structure, emphasizing geometric precision, mathematical rigor, and high-tech corporate infrastructure in a dark, premium setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDcD7Q_iOtsmsfnH3-FvNO6KpfKlFdjxcnwsGGQjEnPl8OABo5NqBjjUWwvYdmvevshVVtQDjMIhk6EiZV7ETUoTUct5JKuDur6cyR8UF6mQgd2W9YLTcp5rdPG49Cpdyp7v7-7gVOtWz9SQFthCFxQblFRrkpSz2vHX50nbK0oMQoWqYRrbiM4pCWK4zbQAzLGJIgDauegnyezyd2IiSU_snUHWxYw83cmOmm0ny8G1xyIXy8C9L6VEg')"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-32 relative dot-bg" id="servicios">
+<div class="max-w-container-max mx-auto px-margin-desktop max-md:px-margin-mobile">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Nuestros Servicios</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">Módulos logísticos diseñados para operar con precisión quirúrgica.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Service Cards -->
+<div class="bg-surface-container p-8 rounded-xl border-t-2 border-primary border-x border-b border-white/5 hover:bg-surface-container-high transition-colors group">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4 group-hover:scale-110 transition-transform">architecture</span>
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface mb-2">Planeación</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Arquitectura detallada del evento desde el concepto inicial hasta la viabilidad técnica.</p>
+</div>
+<div class="bg-surface-container p-8 rounded-xl border-t-2 border-primary border-x border-b border-white/5 hover:bg-surface-container-high transition-colors group">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4 group-hover:scale-110 transition-transform">schema</span>
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface mb-2">Coordinación Logística</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Sincronización de todos los elementos operativos en tiempo real.</p>
+</div>
+<div class="bg-surface-container p-8 rounded-xl border-t-2 border-primary border-x border-b border-white/5 hover:bg-surface-container-high transition-colors group">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4 group-hover:scale-110 transition-transform">inventory_2</span>
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface mb-2">Proveedores</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Gestión rigurosa de la cadena de suministro y control de calidad.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full border-t border-white/5 py-20">
+<div class="max-w-container-max mx-auto px-margin-desktop max-md:px-margin-mobile grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div>
+<div class="font-headline-md text-headline-md text-primary mb-4">Parametric Logistics</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Mathematical Precision in Event Execution.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface mb-4">Contacto</h4>
+<div class="flex flex-col gap-3 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">WhatsApp</a>
+<a class="text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Email</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface mb-4">Social</h4>
+<div class="flex flex-col gap-3 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Instagram</a>
+</div>
+</div>
+<div class="md:col-span-3 mt-12 pt-8 border-t border-white/10 text-center font-body-md text-body-md text-on-surface-variant">
+                © 2024 Parametric Logistics. Mathematical Precision in Event Execution.
+            </div>
+</div>
+</footer>
+</body></html>
