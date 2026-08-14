@@ -115,6 +115,12 @@ textarea {
   border-radius: 8px;
   color: var(--white);
   font-size: 13px;
+  overflow: hidden;
+}
+
+.brand-mark .logo-signature {
+  width: 34px;
+  height: 28px;
 }
 
 .nav-links {
@@ -363,11 +369,158 @@ h3 {
   overflow: hidden;
 }
 
+.logo-showcase {
+  position: relative;
+  display: grid;
+  min-height: 260px;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(24, 168, 255, 0.22), transparent 42%),
+    radial-gradient(circle at 50% 48%, rgba(255, 178, 26, 0.08), transparent 54%),
+    linear-gradient(180deg, #001634, #001026);
+}
+
+.logo-showcase::before,
+.logo-showcase::after {
+  position: absolute;
+  content: "";
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.logo-showcase::before {
+  width: 88%;
+  aspect-ratio: 1;
+  border: 3px solid transparent;
+  background:
+    linear-gradient(#001634, #001634) padding-box,
+    conic-gradient(from 22deg, var(--gold), var(--cyan), var(--green), var(--sky), var(--gold)) border-box;
+  opacity: 0.82;
+  animation: ringPulse 5s ease-in-out infinite;
+}
+
+.logo-showcase::after {
+  inset: 0;
+  background-image: radial-gradient(var(--gold) 1.6px, transparent 2px);
+  background-size: 17px 17px;
+  opacity: 0.28;
+  mask-image: radial-gradient(circle at 16% 8%, #000 0 18%, transparent 36%),
+    radial-gradient(circle at 86% 92%, #000 0 16%, transparent 34%);
+}
+
+.logo-signature {
+  position: relative;
+  z-index: 1;
+  width: min(78%, 520px);
+  height: auto;
+  overflow: visible;
+}
+
+.logo-signature.compact {
+  width: 100%;
+}
+
+.logo-orbits {
+  transform-origin: 50% 50%;
+  animation: logoFloat 8s ease-in-out infinite;
+}
+
+.logo-orbit {
+  fill: none;
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 980;
+  stroke-dashoffset: 980;
+  filter: drop-shadow(0 0 8px currentColor);
+  animation: logoDraw 4.6s ease-in-out infinite;
+}
+
+.compact .logo-orbit {
+  stroke-width: 18;
+  stroke-dasharray: 760;
+  stroke-dashoffset: 760;
+  filter: none;
+}
+
+.logo-core path {
+  fill: none;
+  stroke: var(--magenta);
+  stroke-width: 5;
+  stroke-linejoin: round;
+  opacity: 0.72;
+  filter: drop-shadow(0 0 8px var(--magenta));
+  animation: corePulse 3.2s ease-in-out infinite;
+}
+
+.logo-ring {
+  position: absolute;
+  width: 72%;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  box-shadow: inset 0 0 60px rgba(24, 168, 255, 0.18), 0 0 54px rgba(22, 232, 226, 0.14);
+}
+
+@keyframes logoDraw {
+  0% {
+    stroke-dashoffset: 980;
+    opacity: 0.58;
+  }
+
+  45%,
+  72% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: -980;
+    opacity: 0.66;
+  }
+}
+
+@keyframes logoFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-8px) scale(1.015);
+  }
+}
+
+@keyframes corePulse {
+  0%,
+  100% {
+    opacity: 0.46;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes ringPulse {
+  0%,
+  100% {
+    transform: scale(0.98);
+    opacity: 0.66;
+  }
+
+  50% {
+    transform: scale(1.02);
+    opacity: 0.9;
+  }
+}
+
 .hero-panel img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
+  border-top: 1px solid rgba(255, 178, 26, 0.24);
 }
 
 .metrics {
@@ -732,6 +885,10 @@ summary {
   .hero {
     min-height: auto;
     padding-top: 62px;
+  }
+
+  .logo-showcase {
+    min-height: 210px;
   }
 
   .parametric-curves {

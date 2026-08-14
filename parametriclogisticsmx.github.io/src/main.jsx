@@ -25,6 +25,53 @@ import {
 } from 'lucide-react';
 import './styles.css';
 
+const logoCurves = {
+  j1: { color: '#16e8e2', fn: (t) => [p(t), f(t)] },
+  j2: { color: '#83ea65', fn: (t) => [0.88 * p(t) + 0.2, 0.88 * f(t)] },
+  j3: { color: '#ffd916', fn: (t) => [0.75 * p(t) + 0.42, 0.75 * f(t)] },
+  m1: { color: '#f319f2', fn: (t) => [-3.8 - p(t), f(t)] },
+  m2: { color: '#6e64ff', fn: (t) => [-0.2 - 3.8 - 0.88 * p(t), 0.88 * f(t)] },
+  m3: { color: '#18a8ff', fn: (t) => [-0.42 - 3.8 - 0.75 * p(t), 0.75 * f(t)] },
+};
+
+const logoPaths = buildLogoPaths();
+
+function p(t) {
+  return 4 * Math.cos(t) - 1.9 * Math.cos(2 * t) - 0.5 * Math.cos(3 * t) + 0.1 * Math.cos(5 * t);
+}
+
+function f(t) {
+  return 4.5 * Math.sin(t) ** 3;
+}
+
+function buildLogoPaths(samples = 220) {
+  const entries = Object.entries(logoCurves);
+  const raw = entries.map(([name, item]) => ({
+    name,
+    color: item.color,
+    points: Array.from({ length: samples + 1 }, (_, index) => item.fn((Math.PI * 2 * index) / samples)),
+  }));
+  const allPoints = raw.flatMap((item) => item.points);
+  const xs = allPoints.map(([x]) => x);
+  const ys = allPoints.map(([, y]) => y);
+  const minX = Math.min(...xs);
+  const maxX = Math.max(...xs);
+  const minY = Math.min(...ys);
+  const maxY = Math.max(...ys);
+  const width = maxX - minX;
+  const height = maxY - minY;
+  const scale = Math.min(700 / width, 390 / height);
+  const cx = 400 - scale * (minX + maxX) / 2;
+  const cy = 260 + scale * (minY + maxY) / 2;
+
+  return raw.map((item) => ({
+    ...item,
+    d: item.points
+      .map(([x, y], index) => `${index === 0 ? 'M' : 'L'} ${(cx + scale * x).toFixed(2)} ${(cy - scale * y).toFixed(2)}`)
+      .join(' '),
+  }));
+}
+
 const services = [
   ['Planeacion', 'Diseño integral del evento, presupuesto, cronograma, mapas de flujo y matriz de riesgos.', CalendarCheck],
   ['Coordinacion logistica', 'Control operativo antes, durante y despues del evento con responsables y puntos de verificacion.', Network],
@@ -109,12 +156,36 @@ function ParametricCurves() {
   );
 }
 
+function LogoSignature({ compact = false }) {
+  return (
+    <svg className={compact ? 'logo-signature compact' : 'logo-signature'} viewBox="0 0 800 520" aria-hidden="true">
+      <g className="logo-orbits">
+        {logoPaths.map((item, index) => (
+          <path
+            key={item.name}
+            className="logo-orbit"
+            d={item.d}
+            stroke={item.color}
+            style={{ animationDelay: `${index * -0.6}s` }}
+          />
+        ))}
+      </g>
+      {!compact && (
+        <g className="logo-core">
+          <path d="M300 260 L400 196 L500 260 L400 324 Z" />
+          <path d="M338 260 L400 220 L462 260 L400 300 Z" />
+        </g>
+      )}
+    </svg>
+  );
+}
+
 function App() {
   return (
     <main>
       <nav className="nav">
         <a className="brand" href="#inicio" aria-label="Parametric Logistics">
-          <span className="brand-mark">PL</span>
+          <span className="brand-mark"><LogoSignature compact /></span>
           <span>Parametric Logistics</span>
         </a>
         <div className="nav-links">
@@ -146,6 +217,10 @@ function App() {
           </div>
         </div>
         <div className="hero-panel">
+          <div className="logo-showcase">
+            <LogoSignature />
+            <div className="logo-ring" />
+          </div>
           <img
             src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1000&q=80"
             alt="Equipo coordinando la logistica de un evento profesional"
