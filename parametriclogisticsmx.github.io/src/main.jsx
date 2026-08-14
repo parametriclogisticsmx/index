@@ -84,11 +84,9 @@ const services = [
 
 const eventTypes = [
   'Congresos cientificos',
-  'Lanzamientos tecnologicos',
   'Ferias culturales',
   'Eventos corporativos',
   'Encuentros academicos',
-  'Bodas y celebraciones',
   'Foros hibridos',
   'Experiencias de marca',
 ];
@@ -144,9 +142,9 @@ const faqs = [
   ['Atienden eventos hibridos?', 'Si. Diseñamos la experiencia presencial y remota como un solo sistema logistico.'],
 ];
 
-function ParametricCurves() {
+function ParametricCurves({ className = '' }) {
   return (
-    <svg className="parametric-curves" viewBox="0 0 1200 720" aria-hidden="true">
+    <svg className={`parametric-curves ${className}`} viewBox="0 0 1200 720" aria-hidden="true">
       <path className="curve curve-a" d="M-40 520 C160 250 310 640 510 360 S850 120 1240 290" />
       <path className="curve curve-b" d="M-40 260 C210 120 300 460 520 250 S840 520 1240 110" />
       <path className="curve curve-c" d="M-40 410 C130 590 280 160 510 470 S860 240 1240 500" />
@@ -170,12 +168,7 @@ function LogoSignature({ compact = false }) {
           />
         ))}
       </g>
-      {!compact && (
-        <g className="logo-core">
-          <path d="M300 260 L400 196 L500 260 L400 324 Z" />
-          <path d="M338 260 L400 220 L462 260 L400 300 Z" />
-        </g>
-      )}
+      
     </svg>
   );
 }
@@ -198,8 +191,10 @@ function App() {
       </nav>
 
       <section id="inicio" className="hero">
-        <ParametricCurves />
         <div className="hero-grid" />
+        <div className="hero-logo-background">
+          <LogoSignature />
+        </div>
         <div className="hero-content">
           <p className="eyebrow"><Sparkles size={16} /> Planeacion parametrica de eventos</p>
           <h1>La precision detras de experiencias memorables</h1>
@@ -217,19 +212,15 @@ function App() {
           </div>
         </div>
         <div className="hero-panel">
-          <div className="logo-showcase">
-            <LogoSignature />
-            <div className="logo-ring" />
-          </div>
-          <img
-            src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1000&q=80"
-            alt="Equipo coordinando la logistica de un evento profesional"
-          />
           <div className="metrics">
             <div><strong>5</strong><span>fases de control</span></div>
             <div><strong>360</strong><span>vision operativa</span></div>
             <div><strong>24/7</strong><span>seguimiento clave</span></div>
           </div>
+          <img
+            src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1000&q=80"
+            alt="Equipo coordinando la logistica de un evento profesional"
+          />
         </div>
       </section>
 
@@ -350,6 +341,7 @@ function App() {
       </section>
 
       <section id="cotizacion" className="section quote-section">
+        <ParametricCurves className="quote-curves" />
         <div>
           <p className="section-kicker">Cotizacion</p>
           <h2>Cuéntanos las variables de tu evento.</h2>
@@ -389,7 +381,7 @@ function App() {
 
       <footer id="contacto" className="footer">
         <div>
-          <a className="brand" href="#inicio"><span className="brand-mark">PL</span><span>Parametric Logistics</span></a>
+          <a className="brand" href="#inicio"><span className="brand-mark"><LogoSignature compact /></span><span>Parametric Logistics</span></a>
           <p>Precision, ciencia y colaboracion para experiencias memorables.</p>
         </div>
         <div className="footer-links">

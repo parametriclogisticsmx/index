@@ -211,7 +211,6 @@ textarea {
 
 .parametric-curves {
   position: absolute;
-  inset: -4% -4% auto auto;
   width: 82vw;
   min-width: 780px;
   opacity: 0.9;
@@ -266,6 +265,31 @@ textarea {
 .hero-panel {
   position: relative;
   z-index: 1;
+}
+
+.hero-logo-background {
+  position: absolute;
+  top: 48%;
+  right: -7%;
+  z-index: 0;
+  width: min(760px, 56vw);
+  opacity: 0.2;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.hero-logo-background .logo-signature {
+  width: 100%;
+}
+
+.hero-logo-background .logo-orbit {
+  stroke-width: 6;
+  opacity: 0.72;
+  filter: drop-shadow(0 0 12px currentColor);
+}
+
+.hero-logo-background .logo-core {
+  display: none;
 }
 
 .eyebrow,
@@ -390,7 +414,7 @@ h3 {
 }
 
 .logo-showcase::before {
-  width: 88%;
+  width: min(88%, 520px);
   aspect-ratio: 1;
   border: 3px solid transparent;
   background:
@@ -412,7 +436,7 @@ h3 {
 .logo-signature {
   position: relative;
   z-index: 1;
-  width: min(78%, 520px);
+  width: min(88%, 620px);
   height: auto;
   overflow: visible;
 }
@@ -431,16 +455,16 @@ h3 {
   stroke-width: 8;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-dasharray: 980;
-  stroke-dashoffset: 980;
+  stroke-dasharray: 18 12;
+  stroke-dashoffset: 0;
   filter: drop-shadow(0 0 8px currentColor);
-  animation: logoDraw 4.6s ease-in-out infinite;
+  animation: logoDash 7s linear infinite, logoGlow 3.4s ease-in-out infinite;
 }
 
 .compact .logo-orbit {
   stroke-width: 18;
-  stroke-dasharray: 760;
-  stroke-dashoffset: 760;
+  stroke-dasharray: 26 16;
+  stroke-dashoffset: 0;
   filter: none;
 }
 
@@ -462,21 +486,23 @@ h3 {
   box-shadow: inset 0 0 60px rgba(24, 168, 255, 0.18), 0 0 54px rgba(22, 232, 226, 0.14);
 }
 
-@keyframes logoDraw {
+@keyframes logoDash {
+  to {
+    stroke-dashoffset: -260;
+  }
+}
+
+@keyframes logoGlow {
   0% {
-    stroke-dashoffset: 980;
-    opacity: 0.58;
+    opacity: 0.68;
   }
 
-  45%,
-  72% {
-    stroke-dashoffset: 0;
+  50% {
     opacity: 1;
   }
 
   100% {
-    stroke-dashoffset: -980;
-    opacity: 0.66;
+    opacity: 0.68;
   }
 }
 
@@ -526,7 +552,7 @@ h3 {
 .metrics {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid rgba(255, 178, 26, 0.26);
+  border-bottom: 1px solid rgba(255, 178, 26, 0.26);
 }
 
 .metrics div {
@@ -748,9 +774,26 @@ details {
 }
 
 .quote-section {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(320px, 1.15fr);
   gap: clamp(28px, 6vw, 80px);
+  overflow: hidden;
+}
+
+.quote-section > div,
+.quote-form {
+  position: relative;
+  z-index: 1;
+}
+
+.quote-curves {
+  right: -16%;
+  bottom: -16%;
+  width: min(960px, 78vw);
+  min-width: 620px;
+  opacity: 0.34;
+  transform: rotate(-8deg);
 }
 
 .contact-list,
@@ -894,6 +937,19 @@ summary {
   .parametric-curves {
     width: 150vw;
     min-width: 0;
+  }
+
+  .hero-logo-background {
+    top: 35%;
+    right: -55%;
+    width: 118vw;
+    opacity: 0.13;
+  }
+
+  .quote-curves {
+    right: -64%;
+    bottom: -6%;
+    opacity: 0.24;
   }
 
   .metrics,
